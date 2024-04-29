@@ -1,0 +1,80 @@
+/*DISPOSITIVO MOVIL*/
+.poke__info{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 250px 50px auto;
+    grid-template-areas: "pokeimagen" "poketipo" "pokedescripcion";
+    row-gap: 15px;
+    padding: 40px;
+}
+
+.poke__imagen{
+    grid-area: pokeimagen;
+}
+.poke__imagen img{
+    display: block;
+    width: 80%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+.poke__tipo{
+    grid-area: poketipo;
+    padding-bottom: 2px;
+    border-bottom: 2px solid var(--rojo);
+}
+.poke__nombre{
+    font-family: Solid;
+    font-size: 30px;
+    font-weight: 100;
+    letter-spacing: 4px;
+}
+
+.poke__iconos img{
+    width: 100px;
+}
+
+.poke__descripcion{
+    grid-area: pokedescripcion;
+    padding: 20px 0px;
+    color: var(--color-negro);
+    line-height: 25px;
+}
+
+
+/*DISPOSITIVO COMPUTADORA*/
+
+@media(min-width:900px){
+    .poke__info{
+        display: grid;
+        width: 100%;
+        grid-template-columns:repeat(10, 10%);
+        grid-template-rows: repeat(10, 50px);
+        grid-template-areas: 
+        "pokeimagen pokeimagen pokeimagen pokeimagen pokeimagen poketipo poketipo poketipo poketipo poketipo"
+        "pokeimagen pokeimagen pokeimagen pokeimagen pokeimagen poketipo poketipo poketipo poketipo poketipo"
+        "pokeimagen pokeimagen pokeimagen pokeimagen pokeimagen poketipo poketipo poketipo poketipo poketipo"
+        "pokeimagen pokeimagen pokeimagen pokeimagen pokeimagen pokedescripcion pokedescripcion pokedescripcion pokedescripcion pokedescripcion"
+        "pokeimagen pokeimagen pokeimagen pokeimagen pokeimagen pokedescripcion pokedescripcion pokedescripcion pokedescripcion pokedescripcion"
+        "pokeimagen pokeimagen pokeimagen pokeimagen pokeimagen pokedescripcion pokedescripcion pokedescripcion pokedescripcion pokedescripcion"
+        "pokeimagen pokeimagen pokeimagen pokeimagen pokeimagen pokedescripcion pokedescripcion pokedescripcion pokedescripcion pokedescripcion"
+        "pokeimagen pokeimagen pokeimagen pokeimagen pokeimagen pokedescripcion pokedescripcion pokedescripcion pokedescripcion pokedescripcion"
+        "pokeimagen pokeimagen pokeimagen pokeimagen pokeimagen pokedescripcion pokedescripcion pokedescripcion pokedescripcion pokedescripcion"
+        "pokeimagen pokeimagen pokeimagen pokeimagen pokeimagen pokedescripcion pokedescripcion pokedescripcion pokedescripcion pokedescripcion";
+        row-gap: 0;
+        column-gap: 0;
+        padding: 0px 40px;
+    }    
+    .poke__imagen img{
+        display: block;
+        width: 80%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    .poke__tipo{
+        margin-top: 200px;
+    }
+    .poke__descripcion{
+        padding: 0;
+        line-height: 25px;
+    }
+}

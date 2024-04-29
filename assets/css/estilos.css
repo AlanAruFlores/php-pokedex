@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+:root{
+    --fondo-color: rgba(255,255,255, 0.8);
+    --color-fuente: white;
+    --amarillo:#FAD61D;
+    --rojo:#F62D14;
+    --color-negro:#19191a;
+    --color-fuente-secundario: #535353;
+}
+
+@font-face {
+    font-family: Hollow;
+    src: url("../fuentes/Pokemon Hollow.ttf");
+}
+
+@font-face {
+    font-family: Solid;
+    src: url("../fuentes/Pokemon Solid.ttf");
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-image: url("../imagenes/fondo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px auto auto; /*Hago con auto que se vaya acomodando el row por el contenido*/
+
+    grid-template-areas: "header" "main" "footer";
+    row-gap: 0px;
+}
+
+/*HEADER*/
+.header{
+    grid-area: header;
+    width: 100%;
+    padding: 0px 20px;
+    height: 80px;
+    background-color: var(--rojo);
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.header__div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.header__logo{
+    position: relative;
+    width: 50px;
+    height: 50px;
+
+    left: 10px;
+    top: 8px;
+}
+.header__titulo{
+    font-family: Solid;
+    color: var(--amarillo);
+    text-shadow: 0px 0px 10px #3466af;
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+.header__sufijo{
+    font-family: inherit;
+    color: white
+}
+
+.header__link{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-25%);
+
+    margin-right: 20px;
+
+    background-color: var(--rojo);
+    padding: 8px 20px;
+    text-decoration: none;
+    color: var(--color-fuente);
+
+    text-transform: uppercase;
+    font-size: 12px;
+    border-radius: 50px;
+    border: 1px solid white;
+
+    transition: 500ms;
+}
+
+.header__link:hover{
+    background-color: white;
+    color: var(--rojo);
+}
+
+
+
+
+/*MAIN*/
+.main{
+    grid-area: main;
+    background-color: var(--fondo-color);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    min-height: 600px; /*Damos un ancho minimo*/
+    padding: 40px 10px;
+}
+.main__titulo{
+    text-align: center;
+    font-size: 23px;
+    font-family: Solid;
+    letter-spacing:3px;
+
+    color: var(--color-negro);
+    border-bottom: 4px solid #FAD61D;
+}
+
+.main__titulo--subtitulo{
+    font-size: 18px;
+    border: none;
+}
+.main__parrafo{
+    text-align: center;
+    width: 80%;
+    max-width: 950px;
+    line-height: 26px;
+    color: var(--color-fuente-secundario);
+    font-weight: 500;
+}
+
+.main__formulario{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.main__formulario input[type="text"] {
+    width: 70%;
+    height: 50px;
+    border: 0;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+}
+.main__formulario button{
+    width: 10%;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border: none;
+    background-color: var(--amarillo);
+    color: var(--color-negro);
+    cursor: pointer;
+}
+
+/*TABLA*/
+.main__tabla{
+    margin-top: 40px;
+    width: 90%;
+    max-width: 800px;
+    border-collapse: collapse;
+}
+.main__tabla caption{
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: Solid;
+    letter-spacing: 4px;
+    color: var(--color-negro);
+}
+
+.tabla__header{
+    height: 80px;
+}
+
+.tabla__header tr{
+    background-color: var(--amarillo);
+    font-family: Solid;
+}
+.tabla__header th{
+    border: 1px groove #e1c226;
+    text-align: center;
+    font-family: inherit;
+    letter-spacing: 2px;
+    font-weight: 100;
+    font-size: 10px;
+}
+
+.tabla__body tr{
+    height: 60px;
+    background-color: white;
+}
+.tabla__body tr:nth-child(even){
+    background-color: rgb(232, 232, 232);
+}
+.tabla__body td{
+    text-align: center;
+    /* border: 1px solid black; */
+}
+
+/*IMAGENES POKEMONES E ICONOS*/
+.tabla__imagen{
+    width: 40px;
+    height: 40px;
+}
+.tabla__icono{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+/*ICONOS DE EDICION Y ELIMINAR*/
+.tabla__editar{
+    background-color: var(--amarillo);
+    text-decoration: none;
+    color: white;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    border-radius: 50%;
+}
+.tabla__eliminar{
+    background-color: var(--rojo);
+    text-decoration: none;
+    color: white;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+/*FOOTER*/
+.footer{
+    grid-area: footer;
+    min-height: 350px;
+    color: var(--color-fuente);
+    background-color: var(--rojo);
+    padding: 10px 20px;
+    font-size: 12px;
+    font-family: "League Spartan", sans-serif;
+
+    font-weight: 100;
+}
+
+.footer__titulo{
+    font-family: Solid;
+    font-size: 40px;
+    color: var(--amarillo);
+    letter-spacing: 2px;
+    text-shadow: 0px 0px 10px #3466af;
+}
+.footer__titulo span{
+    font-family: inherit;
+    color: var(--color-fuente);
+}
+
+.footer__subtitulo{
+    margin: 15px 0px;
+}
+
+.footer__integrantes{
+    padding: 0;   
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap:8px
+}
+
+
+/*POP UP*/
+
+
+.popup{
+    display: flex;
+    position: fixed;
+    /*Lo estiramos*/
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--fondo-color);
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.popup__cerrar{
+    display: inline-block;
+    color: var(--color-negro);
+    font-size: 30px;
+    position: absolute;
+    padding: 10px;
+    right: 0;
+    top: 0;
+}
+
+.popup__formulario{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    background-color: var(--rojo);
+    color: var(--color-fuente);
+    width: 80%;
+    max-width: 300px;
+    padding: 30px 10px;
+    
+    box-shadow: 0px 0px 6px var(--color-negro);
+    font-family: "League Sans";
+    
+}
+
+.popup__titulo{
+    text-transform: uppercase;
+    font-weight: 100;
+    border-bottom:1px solid;
+    font-family: Solid;
+    letter-spacing: 4px;
+}
+
+.popup__formulario input[type="text"]{
+    height: 30px;
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+.popup__formulario input[type="submit"]{
+    background-color: var(--amarillo);
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+@media(min-width:500px){
+    .tabla__header th{
+        font-size: 14px;
+    }    
+}
+
+@media(min-width:900px){
+    .footer{
+        padding: 20px 20px;
+        font-size: 14px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        font-weight: 100;
+        min-height: 400px;
+    }
+
+    .tabla__imagen{
+        width: 50px;
+        height: 50px;
+    }
+    .tabla__icono{
+        width: 20px;
+        height: 20px;
+    }
+
+    .tabla__header th{
+        font-size: 14px;
+    }
+    
+}
