@@ -118,7 +118,6 @@ body{
     align-items: center;
     gap: 40px;
 
-    min-height: 600px; /*Damos un ancho minimo*/
     padding: 40px 10px;
 }
 .main__titulo{
@@ -173,7 +172,6 @@ body{
 .main__tabla{
     margin-top: 40px;
     width: 90%;
-    max-width: 800px;
     border-collapse: collapse;
 }
 .main__tabla caption{
@@ -203,6 +201,7 @@ body{
     font-size: 10px;
 }
 
+
 .tabla__body tr{
     height: 60px;
     background-color: white;
@@ -221,9 +220,9 @@ body{
     height: 40px;
 }
 .tabla__icono{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
+    width: 70px;
+    height: 25px;
+    border-radius:0;
 }
 
 /*ICONOS DE EDICION Y ELIMINAR*/
@@ -375,8 +374,9 @@ body{
         height: 50px;
     }
     .tabla__icono{
-        width: 20px;
-        height: 20px;
+        width: 70px;
+        height: 25px;
+        border-radius: 0;
     }
 
     .tabla__header th{
