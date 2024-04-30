@@ -56,15 +56,20 @@
 
     <div class="popup">
         <a href="#" class="popup__cerrar"><i class="fa-solid fa-xmark"></i></a>
-        <form class="popup__formulario" action="#" method="post">
+        <form id="loginForm" class="popup__formulario" action="#" method="post">
             <h2 class="popup__titulo">Login</h2>
-            <input type="text" placeholder="Usuario" required>
-            <input type="text" placeholder="Contraseña" required>
+            <input type="text" id="usuario" placeholder="Usuario" required>
+            <input type="password" id="contrasena" placeholder="Contraseña" required>
             <input type="submit" value="Entrar">
+            <p id="mensajeError" style="color: #ffffff; display: none;">Usuario o contraseña incorrectos</p>
         </form>
     </div>
 
 
+
+
     <?php require_once("./includes/footer.php")?>
+
+    <script src="assets/scritps/popupjs.js"></script>
 </body>
 </html>
