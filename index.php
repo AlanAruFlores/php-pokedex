@@ -1,3 +1,13 @@
+<?php 
+    /*Obtengo todos los pokemons*/
+    $ruta_archivo = parse_ini_file("./config.ini");
+    $ruta = $ruta_archivo["RUTA"];
+    require_once("./php/obtenerPokemons.php");
+    require_once("./php/conexion.php");
+
+    $listaPokemons = obtenerPokemons($conexion);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,18 +39,15 @@
                 </tr>
             </thead>
             <tbody class="tabla__body">
-                <tr>
-                    <td><img src="assets/imagenes/pokemons/Abra.png" class="tabla__imagen"></td>
-                    <td><img src="assets/imagenes/tipos/tipo_psiquico_icono.png" class="tabla__icono"></td>
-                    <td>1</td>
-                    <td>Abra</td>
-                </tr>
-                <tr>
-                    <td><img src="assets/imagenes/pokemons/Charizard.png" class="tabla__imagen"></td>
-                    <td><img src="assets/imagenes/tipos/tipo_fuego_icono.png" class="tabla__icono"></td>
-                    <td>2</td>
-                    <td>Charizard</td>
-                </tr>
+                <?php foreach($listaPokemons as $key => $value): ?>
+                    <tr>
+                        <!-- <td><img src="./assets/imagenes/pokemons/bulbasaur.png" class="tabla__imagen"></td> -->
+                        <td><img src='<?=$value["imagen"]?>' class="tabla__imagen"></td>
+                        <td><img src='<?=$value["tipo"]?>' class="tabla__icono"></td>
+                        <td><?=$value["id"]?></td>
+                        <td><?=$value["nombre"]?></td>
+                    </tr>       
+                <?php endforeach; ?>
             </tbody>
         </table>
     </main>
