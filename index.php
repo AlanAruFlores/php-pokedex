@@ -45,9 +45,9 @@
         </table>
     </main>
 
-    <!--Pop up login-->
+    <!--Pop up login   agregar un ID y un listener.-->
 
-    <!-- <div class="popup">
+    <div class="popup">
         <a href="#" class="popup__cerrar"><i class="fa-solid fa-xmark"></i></a>
         <form class="popup__formulario" action="#" method="post">
             <h2 class="popup__titulo">Login</h2>
@@ -55,7 +55,9 @@
             <input type="text" placeholder="Contraseña" required>
             <input type="submit" value="Entrar">
         </form>
-    </div>  -->
+    </div>
+
+
     <?php require_once("./includes/footer.php")?>
 </body>
 </html>
