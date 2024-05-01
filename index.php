@@ -67,6 +67,6 @@
 
     <?php require_once("./includes/footer.php")?>
 
-    <script src="assets/scritps/popupjs.js"></script>
+    <script src="assets/scripts/popupjs.js"></script>
 </body>
 </html>
