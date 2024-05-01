@@ -8,19 +8,17 @@ document.addEventListener('DOMContentLoaded', function() {
         const usuario = document.getElementById('usuario').value;
         const contrasena = document.getElementById('contrasena').value;
 
-        // Realizar solicitud AJAX para obtener las credenciales desde el archivo PHP
-        fetch('credenciales.php')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Error al obtener las credenciales');
-                }
-                return response.json();
-            })
-            .then(credenciales => {
-                const usuario_valido = credenciales.usuario;
-                const contrasena_valida = credenciales.contrasena;
+        const formData = new FormData();
+        formData.append('usuario', usuario);
+        formData.append('contrasena', contrasena);
 
-                if (usuario === usuario_valido && contrasena === contrasena_valida) {
+        fetch('./validar_login.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
                     const contenidoSecreto = document.querySelector('.popup');
                     contenidoSecreto.style.display = 'none';
                 } else {
@@ -28,7 +26,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             })
             .catch(error => {
-                console.error(error);
+                console.error('Error:', error);
             });
+    });
+
+    const cerrarPopup = document.querySelector('.popup__cerrar');
+    cerrarPopup.addEventListener('click', function(event) {
+        event.preventDefault();
+        const contenidoSecreto = document.querySelector('.popup');
+        contenidoSecreto.style.display = 'none';
     });
 });

@@ -308,8 +308,8 @@ body{
     font-size: 30px;
     position: absolute;
     padding: 10px;
-    right: 0;
-    top: 0;
+    right: 42%;
+    top: 35%;
 }
 
 .popup__formulario{
