@@ -1,0 +1,57 @@
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main__title{
+    font-family: Solid;
+    letter-spacing: 6px;
+    font-size: 26px;
+    color: #FAD61D;
+    text-shadow: 2px 4px  black;
+}
+.main__formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 1px solid; */
+    width: 40%;
+    gap:20px;
+    /* border-radius: 20px; */
+    background-color: #f62e14;
+    padding: 20px 0px;
+}
+.main__formulario label{
+    width: 80%;
+    font-size: 20px;
+    font-family: Solid;
+    color: #fff;
+    text-shadow: 2px 4px black;
+}
+.main__formulario 
+input[type="text"],
+input[type="number"]{
+    width: 80%;
+    height: 40px;
+    border-radius: 0;
+    border: none;
+}
+
+.main__formulario textarea{
+    width: 80%;
+    height: 80px;
+    border-radius: 0;
+    border: none;
+}
+
+.formulario__agregar{
+    background-color: #FAD61D;
+    color: #fff;
+    border: none;
+    width: 90%;
+    padding: 8px 0px;
+    font-size: 15px;
+    font-family: Solid;
+    letter-spacing: 2px;
+}

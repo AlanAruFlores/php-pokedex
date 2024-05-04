@@ -2,9 +2,8 @@
     /*Obtengo todos los pokemons*/
     $ruta_archivo = parse_ini_file("./config.ini");
     $ruta = $ruta_archivo["RUTA"];
-    require_once("./php/obtenerPokemons.php");
-    require_once("./php/conexion.php");
-
+    require_once($ruta."/php/obtenerPokemons.php");
+    require_once($ruta."/php/conexion.php");
     $listaPokemons = obtenerPokemons($conexion);
 
 ?>
@@ -18,7 +17,7 @@
     <title>Pokedex</title>
 </head>
 <body>
-    <?php require_once("./includes/header.php")?>
+    <?php require_once($ruta."/includes/header.php")?>
     <main class="main">
         <h1 class="main__titulo">¿Quien es ese pokemon?</h1>
         <form action="" class="main__formulario">
@@ -44,7 +43,7 @@
                         <!-- <td><img src="./assets/imagenes/pokemons/bulbasaur.png" class="tabla__imagen"></td> -->
                         <td><img src='<?=$value["imagen"]?>' class="tabla__imagen"></td>
                         <td><img src='<?=$value["tipo"]?>' class="tabla__icono"></td>
-                        <td><?=$value["id"]?></td>
+                        <td><?=$value["identificador"]?></td>
                         <td><?=$value["nombre"]?></td>
                     </tr>       
                 <?php endforeach; ?>
@@ -65,7 +64,7 @@
         </form>
     </div>
 
-    <?php require_once("./includes/footer.php")?>
+    <?php require_once($ruta."/includes/footer.php")?>
 
     <script src="assets/scripts/popupjs.js"></script>
 </body>

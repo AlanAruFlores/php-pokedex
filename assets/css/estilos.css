@@ -213,6 +213,15 @@ body{
     text-align: center;
     /* border: 1px solid black; */
 }
+.tabla__agregar{
+    background-color: #66e73e;
+    text-decoration: none;
+    padding: 10px 0px;
+    letter-spacing: normal;
+    font-size: 20px;
+    color: #fff;
+    display:block;
+}
 
 /*IMAGENES POKEMONES E ICONOS*/
 .tabla__imagen{
