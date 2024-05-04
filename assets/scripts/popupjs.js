@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (data.success) {
                     const contenidoSecreto = document.querySelector('.popup');
                     contenidoSecreto.style.display = 'none';
+                    location.href="./administrador.php";
                 } else {
                     mensajeError.style.display = 'block';
                 }

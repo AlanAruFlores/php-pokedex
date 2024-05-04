@@ -55,8 +55,8 @@
     <!--Pop up login   agregar un ID y un listener.-->
 
     <div class="popup">
-        <a href="#" class="popup__cerrar"><i class="fa-solid fa-xmark"></i></a>
         <form id="loginForm" class="popup__formulario" action="#" method="post">
+            <a href="#" class="popup__cerrar"><i class="fa-solid fa-xmark"></i></a>
             <h2 class="popup__titulo">Login</h2>
             <input type="text" id="usuario" placeholder="Usuario" required>
             <input type="password" id="contrasena" placeholder="Contraseña" required>
