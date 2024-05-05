@@ -1,10 +1,18 @@
 <?php 
-    /*Obtengo todos los pokemons*/
+
     $ruta_archivo = parse_ini_file("./config.ini");
     $ruta = $ruta_archivo["RUTA"];
-    require_once($ruta."/php/obtenerPokemons.php");
-    require_once($ruta."/php/conexion.php");
+    $url = $ruta_archivo["URL"];
+    /*Obtengo todos los pokemons*/
+    require_once("$ruta/php/obtenerPokemons.php");
+    require_once("$ruta/php/conexion.php");
+    
+    /*Evaluo que no sea administrador*/
+    if(isset($_SESSION["usuario"]))
+        header("Location:$url/administrador.php");
+
     $listaPokemons = obtenerPokemons($conexion);
+
 
 ?>
 <!DOCTYPE html>
@@ -17,7 +25,7 @@
     <title>Pokedex</title>
 </head>
 <body>
-    <?php require_once($ruta."/includes/header.php")?>
+    <?php require_once("$ruta/includes/header.php")?>
     <main class="main">
         <h1 class="main__titulo">¿Quien es ese pokemon?</h1>
         <form action="" class="main__formulario">
@@ -44,7 +52,7 @@
                         <td><img src='<?=$value["imagen"]?>' class="tabla__imagen"></td>
                         <td><img src='<?=$value["tipo"]?>' class="tabla__icono"></td>
                         <td><?=$value["identificador"]?></td>
-                        <td><?=$value["nombre"]?></td>
+                        <td><a href="<?="$url/info.php?id=".$value["id"]?>"><?=$value["nombre"]?></a></td>
                     </tr>       
                 <?php endforeach; ?>
             </tbody>
@@ -64,7 +72,7 @@
         </form>
     </div>
 
-    <?php require_once($ruta."/includes/footer.php")?>
+    <?php require_once("$ruta/includes/footer.php")?>
 
     <script src="assets/scripts/popupjs.js"></script>
 </body>

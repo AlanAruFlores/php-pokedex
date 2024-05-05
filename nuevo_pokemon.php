@@ -3,13 +3,13 @@
     $ruta_archivo = parse_ini_file("./config.ini");
     $ruta = $ruta_archivo["RUTA"];
     $url = $ruta_archivo["URL"];
-    require_once($ruta."/php/conexion.php");
+    require_once("$ruta/php/conexion.php");
     if(!isset($_SESSION["usuario"])) {
         header("Location:index.php");
     }
     
     /*Obtengo los tipos */
-    require_once($ruta."/php/obtenerTipos.php");
+    require_once("$ruta/php/obtenerTipos.php");
     $tipos = obtenerTipos();
 ?>
 <!DOCTYPE html>
@@ -23,10 +23,10 @@
     <title>Agregar</title>
 </head>
 <body>
-    <?php require_once($ruta."/includes/header.php")?>
+    <?php require_once("$ruta/includes/header.php")?>
     <main class="main">
 
-        <form action="<?=$url."/php/agregar_pokemon.php"?>" class="main__formulario" enctype="multipart/form-data" method="post">
+        <form action="<?="$url/php/agregar_pokemon.php"?>" class="main__formulario" enctype="multipart/form-data" method="post">
             <h1 class="main__title">Agregar Nuevo Pokemon !!</h1>
             <label>Identificador</label>
             <input type="number" name="identificador" id="identificador" required>
@@ -45,6 +45,6 @@
             <input type="submit" value="Agregar" class="formulario__agregar">
         </form>
     </main>
-    <?php require_once($ruta."/includes/footer.php")?>
+    <?php require_once("$url/includes/footer.php")?>
 </body>
 </html>

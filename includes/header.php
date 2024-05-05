@@ -1,11 +1,11 @@
 <header class="header">
     <div class="header__div">
         <h1 class="header__titulo">Poke<span class="header__sufijo">Info</span></h1>
-        <img src="assets/imagenes/pikachu.svg" class="header__logo">
+        <img src="./assets/imagenes/pikachu.svg" class="header__logo">
     </div>
 
     <?php if (isset($_SESSION["usuario"])):?>
-        <a href="#"class="header__link">Cerrar Sesion</a>
+        <a href="<?="$url/php/cerrar_sesion.php"?>"class="header__link">Cerrar Sesion</a>
     <?php endif;?>
 
     

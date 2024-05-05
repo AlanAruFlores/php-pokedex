@@ -3,44 +3,52 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 .main__title{
     font-family: Solid;
-    letter-spacing: 6px;
-    font-size: 26px;
+    letter-spacing: 2px;
+    font-size: 18px;
     color: #FAD61D;
     text-shadow: 2px 4px  black;
 }
 .main__formulario{
+    max-width: 700px;
     display: flex;
     flex-direction: column;
     align-items: center;
     /* border: 1px solid; */
-    width: 40%;
+    width: 85%;
     gap:20px;
     /* border-radius: 20px; */
     background-color: #f62e14;
-    padding: 20px 0px;
+    padding: 20px 10px;
+    position: relative;
 }
 .main__formulario label{
     width: 80%;
-    font-size: 20px;
+    font-size: 15px;
     font-family: Solid;
     color: #fff;
     text-shadow: 2px 4px black;
 }
 .main__formulario 
 input[type="text"],
-input[type="number"]{
+input[type="number"],
+select{
     width: 80%;
-    height: 40px;
+    height: 30px;
     border-radius: 0;
     border: none;
 }
 
+.main__formulario input[type="file"]{
+    width: 80%;
+}
+
 .main__formulario textarea{
     width: 80%;
-    height: 80px;
+    height: 60px;
     border-radius: 0;
     border: none;
 }

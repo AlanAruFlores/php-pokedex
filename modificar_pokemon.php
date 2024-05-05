@@ -35,11 +35,11 @@
     <title>Agregar</title>
 </head>
 <body>
-    <?php require_once($ruta."/includes/header.php")?>
+    <?php require_once("$ruta/includes/header.php")?>
     <main class="main">
 
-        <form action="<?=$url."/php/actualizar_pokemon.php?id=".$pokemon["id"]?>" class="main__formulario" enctype="multipart/form-data" method="post">
-            <h1 class="main__title">Agregar Nuevo Pokemon !!</h1>
+        <form action="<?="$url/php/actualizar_pokemon.php?id=".$pokemon["id"]?>" class="main__formulario" enctype="multipart/form-data" method="post">
+            <h1 class="main__title">Actualiza al Pokemon!!</h1>
             <label>Identificador</label>
             <input type="number" name="identificador" id="identificador" value="<?=$pokemon["identificador"]?>" required>
             <label>Nombre</label>
@@ -58,9 +58,9 @@
             </select>
             <label>Descripcion</label>
             <textarea name="descripcion" id="descripcion"  required><?=$pokemon["descripcion"]?></textarea>
-            <input type="submit" value="Agregar" class="formulario__agregar">
+            <input type="submit" value="Actualizar" class="formulario__agregar">
         </form>
     </main>
-    <?php require_once($ruta."/includes/footer.php")?>
+    <?php require_once("$ruta/includes/footer.php")?>
 </body>
 </html>

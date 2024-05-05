@@ -8,10 +8,10 @@
 
     $conexion = mysqli_connect($localhost,$usuario,$contrasenia,$baseDatos,$puerto);
 
-    if(mysqli_connect_errno()){
-        echo "Hay un error en la bd";
-    }else{  
-        echo "Ya funca";
-    }
+    // if(mysqli_connect_errno()){
+    //     echo "Hay un error en la bd";
+    // }else{  
+    //     echo "Ya funca";
+    // }
 ?>
 
