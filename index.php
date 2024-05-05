@@ -11,8 +11,11 @@
     if(isset($_SESSION["usuario"]))
         header("Location:$url/administrador.php");
 
-    $listaPokemons = obtenerPokemons($conexion);
-
+    $listaPokemons = "";
+    if(!isset($_GET["patron"]))
+        $listaPokemons = obtenerPokemons($conexion);
+    else
+        $listaPokemons  = obtenerPokemons($conexion,$_GET["patron"]);
 
 ?>
 <!DOCTYPE html>
@@ -28,8 +31,8 @@
     <?php require_once("$ruta/includes/header.php")?>
     <main class="main">
         <h1 class="main__titulo">¿Quien es ese pokemon?</h1>
-        <form action="" class="main__formulario">
-            <input type="text" name="" placeholder="pika pika">
+        <form action="<?="$url/index.php"?>" class="main__formulario" method="get">
+            <input type="text" name="patron" placeholder="pika pika">
             <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
 

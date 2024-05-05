@@ -11,7 +11,11 @@
         header("Location:index.php");
     }
 
-    $listaPokemons = obtenerPokemons($conexion);
+    $listaPokemons = "";
+    if(!isset($_GET["patron"]))
+        $listaPokemons = obtenerPokemons($conexion);
+    else
+        $listaPokemons  = obtenerPokemons($conexion,$_GET["patron"]);
 ?>
 
 <!DOCTYPE html>
@@ -28,8 +32,8 @@
 
     <main class="main">
         <h1 class="main__titulo">¿Quien es ese pokemon?</h1>
-        <form action="" class="main__formulario">
-            <input type="text" name="" placeholder="pika pika">
+        <form action="<?="$url/administrador.php"?>" class="main__formulario" method="get">
+            <input type="text" name="patron" placeholder="pika pika">
             <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
 

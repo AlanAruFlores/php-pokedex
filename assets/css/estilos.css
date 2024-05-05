@@ -165,10 +165,15 @@ body{
     border-bottom-right-radius: 40px;
     border: none;
     background-color: var(--amarillo);
-    color: var(--color-negro);
+    color: #fff;
+    transition: .5s;
     cursor: pointer;
 }
 
+.main__formulario button:hover{
+    background-color: #fff;
+    color: var(--amarillo);
+}
 /*TABLA*/
 .main__tabla{
     margin-top: 40px;
@@ -244,6 +249,12 @@ body{
     height: 30px;
     padding: 10px;
     border-radius: 50%;
+    transition: .5s;
+}
+
+.tabla__editar:hover{
+    background-color: white;
+    color: var(--amarillo);
 }
 .tabla__eliminar{
     background-color: var(--rojo);
@@ -253,8 +264,12 @@ body{
     height: 30px;
     padding: 10px;
     border-radius: 50%;
+    transition: .5s;
 }
-
+.tabla__eliminar:hover{
+    background-color: white;
+    color: var(--rojo);
+}
 /*FOOTER*/
 .footer{
     grid-area: footer;
