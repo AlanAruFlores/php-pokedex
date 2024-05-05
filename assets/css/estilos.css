@@ -181,15 +181,35 @@ body{
     border-collapse: collapse;
 }
 .main__tabla caption{
-    font-size: 20px;
-    letter-spacing: 1px;
-    font-weight: bold;
     margin-bottom: 20px;
+}
+.main__tabla caption span{
+    width: 100%;
     font-family: Solid;
     letter-spacing: 4px;
-    color: var(--color-negro);
+    font-weight: bold;
+    font-size: 20px;
 }
 
+.tabla__agregar{
+    line-height: 40px;
+    background-color: #66e73e;
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    letter-spacing: normal;
+    color: #fff;
+    display:inline-block;
+    border-radius:50%;
+    margin-left: 10px;
+    transition: .5s;
+}
+
+.tabla__agregar:hover{   
+    background-color: #fff;
+    color: #66e73e;
+
+}
 .tabla__header{
     height: 80px;
 }
@@ -219,15 +239,7 @@ body{
     text-align: center;
     /* border: 1px solid black; */
 }
-.tabla__agregar{
-    background-color: #66e73e;
-    text-decoration: none;
-    padding: 10px 0px;
-    letter-spacing: normal;
-    font-size: 20px;
-    color: #fff;
-    display:block;
-}
+
 
 /*IMAGENES POKEMONES E ICONOS*/
 .tabla__imagen{

@@ -41,8 +41,8 @@
         <p class="main__parrafo">PokeInfo es el destino definitivo para todos los amantes y entrenadores de Pokémon. Con una extensa base de datos que abarca desde los clásicos de la primera generación hasta las últimas adiciones de las regiones más recientes. PokeInfo te ofrece una experiencia única y enriquecedora. ¡Prepárate para embarcarte en una aventura inigualable mientras exploras todo lo que PokeInfo tiene para ofrecer!</p>
         <?php if(mysqli_num_rows($listaPokemons) > 0): ?>
         <table class="main__tabla">
-            <caption class="tabla__titulo">Lista de Pokemons
-                <a href="<?="$url/nuevo_pokemon.php"?>" class="tabla__agregar">Agregar nuevo Pokemon</a>
+            <caption class="tabla__titulo"><span>Lista de Pokemons</span>
+                <a href="<?="$url/nuevo_pokemon.php"?>" class="tabla__agregar"><i class="fa-solid fa-plus"></i></a>
             </caption>
             <thead class="tabla__header">
                 <tr>

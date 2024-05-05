@@ -6,7 +6,7 @@
             <ul class="footer__integrantes">
                 <li>Alan Aruquipa</li>
                 <li>Franco Vargas</li>
-                <li>Lucas</li>
+                <li>Lucas Gavagnin</li>
             </ul>
         </div>
         <div class="footer__informacion2">
