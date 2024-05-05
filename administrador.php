@@ -2,8 +2,10 @@
     //Evito que el usuario pueda acceder al administrador si no paso el login
     $ruta_archivo = parse_ini_file("./config.ini");
     $ruta = $ruta_archivo["RUTA"];
-    require_once($ruta."/php/obtenerPokemons.php");
+    $url = $ruta_archivo["URL"];
     require_once($ruta."/php/conexion.php");
+
+    require_once($ruta."/php/obtenerPokemons.php");
 
     if(!isset($_SESSION["usuario"])) {
         header("Location:index.php");
@@ -50,13 +52,12 @@
             <tbody class="tabla__body">
                 <?php foreach($listaPokemons as $key => $value): ?>
                     <tr>
-                        <!-- <td><img src="./assets/imagenes/pokemons/bulbasaur.png" class="tabla__imagen"></td> -->
                         <td><img src='<?=$value["imagen"]?>' class="tabla__imagen"></td>
                         <td><img src='<?=$value["tipo"]?>' class="tabla__icono"></td>
                         <td><?=$value["id"]?></td>
                         <td><?=$value["nombre"]?></td>
-                        <td><a href="#" class="tabla__editar"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="#" class="tabla__eliminar"><i class="fa-solid fa-trash"></i></a></td>
+                        <td><a href="<?="$url/modificar_pokemon.php?id=".$value["id"]?>" class="tabla__editar"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                        <td><a href="<?="$url/php/dar_de_baja.php?id=".$value["id"]?>" class="tabla__eliminar"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>       
                 <?php endforeach; ?>
             </tbody>
