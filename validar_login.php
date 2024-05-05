@@ -1,20 +1,22 @@
 <?php
-session_start();
-
-function consultarIni($usuario, $contrasena) {
-    $credenciales = parse_ini_file('credenciales.ini');
-
-    return isset($credenciales['usuario']) && isset($credenciales['contrasena']) &&
-        $credenciales['usuario'] === $usuario && $credenciales['contrasena'] === $contrasena;
+function verificar($usuario, $contrasena, $conexion) {
+    $sql__select = "SELECT * FROM usuario WHERE usuario = '$usuario' and contrasena = '$contrasena'";
+    $resultado = mysqli_query($conexion, $sql__select);
+    return mysqli_num_rows($resultado) == 1;
 }
 
+
+$ruta_archivo = parse_ini_file("./config.ini");
+$ruta = $ruta_archivo["RUTA"];
+
+require_once("$ruta/php/conexion.php");
 $response = array();
 
 if (isset($_POST["usuario"]) && isset($_POST["contrasena"])) {
     $usuario = $_POST["usuario"];
     $contrasena = $_POST["contrasena"];
 
-    $esValido = consultarIni($usuario, $contrasena);
+    $esValido = verificar($usuario, $contrasena,$conexion);
 
     if ($esValido) {
         $_SESSION["usuario"] = $usuario;

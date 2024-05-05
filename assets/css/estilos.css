@@ -363,7 +363,7 @@ body{
     letter-spacing: 4px;
 }
 
-.popup__formulario input[type="text"]{
+.popup__formulario input[type="text"], input[type="password"]{
     height: 30px;
     background-color: white;
     border: none;
@@ -376,6 +376,24 @@ body{
     border: none;
     padding: 8px;
     border-radius: 4px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.popup__formulario input[type="submit"]:hover{
+    background-color: white;
+    color: var(--amarillo);
+}
+
+
+.ningun__resultado{
+    background-color: #FAD61D;
+    font-size: 15px;
+    width: 80%;
+    text-align: center;
+    font-family: Solid;
+    letter-spacing: 2px;
+    padding: 10px 0px;
 }
 
 @media(min-width:500px){
