@@ -45,6 +45,6 @@
             <input type="submit" value="Agregar" class="formulario__agregar">
         </form>
     </main>
-    <?php require_once("$url/includes/footer.php")?>
+    <?php require_once("$ruta/includes/footer.php")?>
 </body>
 </html>
