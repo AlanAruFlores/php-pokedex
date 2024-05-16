@@ -17,7 +17,7 @@
     $pokemon = obtenerUnPokemonPorId($id_pokemon, $conexion);
 ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -28,7 +28,7 @@
   
     <title>Informacion</title>
 </head>
-<body>
+<body> -->
     <?php require_once("$ruta/includes/header.php")?>
 
     <main class="main poke__info">

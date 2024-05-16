@@ -16,3 +16,19 @@
             <p>	&#169; Universidad Nacional de la Matanza</p>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginButton = document.getElementById('loginButton');
+
+            loginButton.addEventListener('click', function(event) {
+                event.preventDefault();
+
+                const popup = document.querySelector('.popup');
+                popup.style.display = 'flex';
+
+            });
+        });
+    </script>
+     <script src="assets/scripts/popupjs.js"></script>
+</body>
+</html>

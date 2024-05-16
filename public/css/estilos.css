@@ -182,8 +182,9 @@ body{
 }
 .main__tabla caption{
     margin-bottom: 20px;
+    font-family: Solid;
 }
-.main__tabla caption span{
+.main__tabla caption {
     width: 100%;
     font-family: Solid;
     letter-spacing: 4px;
