@@ -11,7 +11,7 @@
         }
 
         public function getById($pokemon){
-            return $this->database->executeQuery("SELECT * FROM pokemon WHERE id =".$pokemon->getId());
+            return $this->database->executeQuery("SELECT * FROM pokemon WHERE id ='".$pokemon->getId()."'");
         }
 
         public function insert($pokemon){

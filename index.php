@@ -2,15 +2,11 @@
     include_once("Configuration.php");
     
     $controller = isset($_GET["controller"]) ? $_GET["controller"] : "";
+    $action = isset($_GET["action"]) ? $_GET["action"] : "";
 
-    switch($controller){
-        case "users":
-            //Completar esta seccion
-            break;
-        default:
-            $pokemonController = Configuration::getPokemonController();
-            $pokemonController->listPokemons();   
-            break;     
-    }
+    
 
+    $router = Configuration::getRouter();
+    $router->route($controller, $action);
+    
 ?>

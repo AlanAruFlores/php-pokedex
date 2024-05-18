@@ -8,7 +8,9 @@
 
         public function executeQuery($sql){
             $result = mysqli_query($this->conexion, $sql);
-            return mysqli_fetch_all($result , MYSQLI_ASSOC);
+            if(mysqli_num_rows($result) == 1)
+                return mysqli_fetch_assoc($result);
+            return mysqli_fetch_all($result,MYSQLI_ASSOC);
         }        
 
         public function __destruct(){

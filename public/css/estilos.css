@@ -180,17 +180,15 @@ body{
     width: 90%;
     border-collapse: collapse;
 }
-.main__tabla caption{
-    margin-bottom: 20px;
-    font-family: Solid;
-}
-.main__tabla caption {
+.tabla__titulo {
     width: 100%;
     font-family: Solid;
     letter-spacing: 4px;
     font-weight: bold;
     font-size: 20px;
+    margin-bottom: 20px;
 }
+
 
 .tabla__agregar{
     line-height: 40px;

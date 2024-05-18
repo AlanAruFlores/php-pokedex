@@ -1,0 +1,26 @@
+<main class="main">    
+    {{#pokemon}}
+        <form action="/actualizar_pokemon.php?id={{id}}>" class="main__formulario" enctype="multipart/form-data" method="post">
+            <h1 class="main__title">Actualiza al Pokemon!!</h1>
+            <label>Identificador</label>
+            <input type="number" name="identificador" id="identificador" value="{{identificador}}" required>
+            <label>Nombre</label>
+            <input type="text" name="nombre" id="nombre"  value="{{nombre}}" required>
+            <label>Imagen</label>
+            <input type="file" name="imagen" id="imagen" accept="image/*" required>
+            <label>Tipo</label>
+            <select name="tipo" required>
+                {{! <?php foreach($tipos as $tipo): ?>
+                    <?php if($data["pokemon"]["tipo"] == $tipo->getImagen()):?>
+                        <option value="<?=$tipo->getImagen()?>" selected><?=$tipo->getNombre()?></option>
+                    <?php else:?>
+                        <option value="<?=$tipo->getImagen()?>"><?=$tipo->getNombre()?></option>
+                    <?php endif;?>
+                <?php endforeach; ?> }}
+            </select>
+            <label>Descripcion</label>
+            <textarea name="descripcion" id="descripcion"  required>{{descripcion}}</textarea>
+            <input type="submit" value="Actualizar" class="formulario__agregar">
+        </form>
+    {{/pokemon}}
+</main>
