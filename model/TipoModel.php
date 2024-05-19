@@ -8,21 +8,21 @@
 
         public function getAllTipos(){
             return array(
-                new Tipo("Acero", "./public/imagenes/tipos/tipo_acero.png"),
-                new Tipo("Agua", "./public/imagenes/tipos/tipo_agua.png"),
-                new Tipo("Bicho", "./public/imagenes/tipos/tipo_bicho.png"),
-                new Tipo("Dragón", "./public/imagenes/tipos/tipo_dragon.png"),
-                new Tipo("Eléctrico", "./public/imagenes/tipos/tipo_electrico.png"),
-                new Tipo("Fantasma", "./public/imagenes/tipos/tipo_fantasma.png"),
-                new Tipo("Fuego", "./public/imagenes/tipos/tipo_fuego.png"),
-                new Tipo("Hada", "./public/imagenes/tipos/tipo_hada.png"),
-                new Tipo("Hielo", "./public/imagenes/tipos/tipo_hielo.png"),
-                new Tipo("Lucha", "./public/imagenes/tipos/tipo_lucha.png"),
-                new Tipo("Normal", "./public/imagenes/tipos/tipo_normal.png"),
-                new Tipo("Planta", "./public/imagenes/tipos/tipo_planta.png"),
-                new Tipo("Psíquico", "./public/imagenes/tipos/tipo_psiquico.png"),
-                new Tipo("Roca", "./public/imagenes/tipos/tipo_roca.png"),
-                new Tipo("Siniestro", "./public/imagenes/tipos/tipo_siniestro.png")
+                new Tipo("Acero", "/php-pokedex/public/imagenes/tipos/tipo_acero.png"),
+                new Tipo("Agua", "/php-pokedex/public/imagenes/tipos/tipo_agua.png"),
+                new Tipo("Bicho", "/php-pokedex/public/imagenes/tipos/tipo_bicho.png"),
+                new Tipo("Dragón", "/php-pokedex/public/imagenes/tipos/tipo_dragon.png"),
+                new Tipo("Eléctrico", "/php-pokedex/public/imagenes/tipos/tipo_electrico.png"),
+                new Tipo("Fantasma", "/php-pokedex/public/imagenes/tipos/tipo_fantasma.png"),
+                new Tipo("Fuego", "/php-pokedex/public/imagenes/tipos/tipo_fuego.png"),
+                new Tipo("Hada", "/php-pokedex/public/imagenes/tipos/tipo_hada.png"),
+                new Tipo("Hielo", "/php-pokedex/public/imagenes/tipos/tipo_hielo.png"),
+                new Tipo("Lucha", "/php-pokedex/public/imagenes/tipos/tipo_lucha.png"),
+                new Tipo("Normal", "/php-pokedex/public/imagenes/tipos/tipo_normal.png"),
+                new Tipo("Planta", "/php-pokedex/public/imagenes/tipos/tipo_planta.png"),
+                new Tipo("Psíquico", "/php-pokedex/public/imagenes/tipos/tipo_psiquico.png"),
+                new Tipo("Roca", "/php-pokedex/public/imagenes/tipos/tipo_roca.png"),
+                new Tipo("Siniestro", "/php-pokedex/public/imagenes/tipos/tipo_siniestro.png")
             );
         }
 

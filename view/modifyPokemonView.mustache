@@ -1,7 +1,8 @@
 <main class="main">    
     {{#pokemon}}
-        <form action="/actualizar_pokemon.php?id={{id}}>" class="main__formulario" enctype="multipart/form-data" method="post">
+        <form action="/php-pokedex/admin/updatePokemon" class="main__formulario" enctype="multipart/form-data" method="post">
             <h1 class="main__title">Actualiza al Pokemon!!</h1>
+            <input type="hidden" name="id" id ="id" value="{{id}}">
             <label>Identificador</label>
             <input type="number" name="identificador" id="identificador" value="{{identificador}}" required>
             <label>Nombre</label>

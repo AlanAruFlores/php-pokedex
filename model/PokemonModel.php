@@ -7,30 +7,31 @@
         }
 
         public function getAll(){
-            return $this->database->executeQuery("SELECT * FROM pokemon");
+            return $this->database->query("SELECT * FROM pokemon");
         }
 
         public function getById($pokemon){
-            return $this->database->executeQuery("SELECT * FROM pokemon WHERE id ='".$pokemon->getId()."'");
+            return $this->database->query("SELECT * FROM pokemon WHERE id ='".$pokemon->getId()."'");
         }
 
         public function insert($pokemon){
-            $pokemonAttributes = self::getPokemonAttributes($pokemon);
-            
-            return $this->database->executeQuery("INSERT INTO pokemon (identificador, imagen, nombre, tipo, descripcion) VALUES ('".$pokemonAttributes["identificador"]."', '".$pokemonAttributes["imagen"]."', '".$pokemonAttributes["nombre"]."', '".$pokemonAttributes["tipo"]."','".$pokemonAttributes["descripcion"]."');");
+            $pokemonAttributes = self::getPokemonAttributes($pokemon); 
+            return $this->database->execute("INSERT INTO pokemon (identificador, imagen, nombre, tipo, descripcion) VALUES ('".$pokemonAttributes["identificador"]."', '".$pokemonAttributes["imagen"]."', '".$pokemonAttributes["nombre"]."', '".$pokemonAttributes["tipo"]."','".$pokemonAttributes["descripcion"]."');");
         }
 
         public function update($pokemon){
             $pokemonAttributes = self::getPokemonAttributes($pokemon);
-
-            return $this->database->executeQuery("UPDATE pokemon SET identificador = '".$pokemonAttributes["identificador"]."', nombre= '".$pokemon["nombre"]."', tipo= '".$pokemonAttributes["tipo"]."', descripcion = '".$pokemonAttributes["descripcion"]."', imagen='".$pokemonAttributes["imagen"]."' WHERE id = '".$pokemonAttributes["id"]."';");
+            return $this->database->execute("UPDATE pokemon SET identificador = '".$pokemonAttributes["identificador"]."', nombre= '".$pokemonAttributes["nombre"]."', tipo= '".$pokemonAttributes["tipo"]."', descripcion = '".$pokemonAttributes["descripcion"]."', imagen='".$pokemonAttributes["imagen"]."' WHERE id = '".$pokemonAttributes["id"]."';");
         }
 
-        public function delete($pokemon){
+        public function deleteById($pokemon){
             $pokemonAttributes = self::getPokemonAttributes($pokemon);
-            return $this->database->executeQuery("DELETE FROM pokemon WHERE id = '".$pokemonAttributes["id"]."'");
+            return $this->database->execute("DELETE FROM pokemon WHERE id = '".$pokemonAttributes["id"]."'");
         }
 
+        public function searchPokemon($patron){
+            return $this->database->query("SELECT * FROM pokemon WHERE nombre like '%$patron%'");
+        }
         /*
             Obtenemos los atributos del pokemon
         */

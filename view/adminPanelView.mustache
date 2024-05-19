@@ -1,6 +1,6 @@
     <main class="main">
         <h1 class="main__titulo">¿Quien es ese pokemon?</h1>
-        <form action="#" class="main__formulario" method="get">
+        <form action="/php-pokedex/admin/search" class="main__formulario" method="post">
             <input type="text" name="patron" placeholder="pika pika">
             <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
@@ -9,7 +9,7 @@
         {{^isListEmpty}}
         <table class="main__tabla">
             <caption class="tabla__titulo">Lista de Pokemons
-                <a href="nuevo_pokemon_html" class="tabla__agregar"><i class="fa-solid fa-plus"></i></a>
+                <a href="/php-pokedex/admin/add" class="tabla__agregar"><i class="fa-solid fa-plus"></i></a>
             </caption>
             <thead class="tabla__header">
                 <tr>
@@ -27,9 +27,9 @@
                         <td><img src='{{imagen}}' class="tabla__imagen"></td>
                         <td><img src='{{tipo}}' class="tabla__icono"></td>
                         <td>{{identificador}}</td>
-                        <td><a href="/info.php?id={{id}}">{{nombre}}</a></td>
-                        <td><a href="/modificar_pokemon.php?id={{id}}" class="tabla__editar"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                        <td><a href="$/php/dar_de_baja.php?id={{id}}" class="tabla__eliminar"><i class="fa-solid fa-trash"></i></a></td>
+                        <td><a href="/php-pokedex/admin/info/id={{id}}">{{nombre}}</a></td>
+                        <td><a href="/php-pokedex/admin/update/id={{id}}" class="tabla__editar"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                        <td><a href="/php-pokedex/admin/delete/id={{id}}" class="tabla__eliminar"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>       
                 {{/listPokemons}}
             </tbody>

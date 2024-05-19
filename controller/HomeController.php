@@ -26,5 +26,15 @@ class HomeController{
         $pokemon = $this->pokemonModel->getById($dtoPokemon);
         $this->presenter->render("view/showPokemonInfoView.mustache", ["pokemon"=>$pokemon,...$this->main_settings]);
     }
+    public function search(){
+        $patron = isset($_POST["patron"]) ? $_POST["patron"] : "";
+        $listPokemons = array();
+        if($patron == "")
+            $listPokemons = $this->pokemonModel->getAll();
+        else
+            $listPokemons = $this->pokemonModel->searchPokemon($patron);
 
+        $this->presenter->render("view/homeView.mustache",["listPokemons"=>$listPokemons,
+            "isListEmpty"=> count($listPokemons) == 0, ...$this->main_settings]);
+    }
 }?>

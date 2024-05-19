@@ -1,12 +1,12 @@
 <?php 
     include_once("helper/Database.php");
     include_once("helper/MustachePresenter.php");
+    include_once("helper/Router.php");
     include_once("controller/HomeController.php");
     include_once("controller/AdminController.php");
     include_once("model/PokemonModel.php");
     include_once("model/TipoModel.php");
     include_once("model/Pokemon.php");
-    include_once("Router.php");
 
     include_once("vendor/mustache/src/Mustache/Autoloader.php");
 
@@ -57,7 +57,7 @@
 
         public static function getMainSettings(){
             $main_settings = array(
-                "is_update_or_add_pokemon" => ($_GET["controller"] == "update_pokemon" || $_GET["controller"] == "add_pokemon"),
+                "is_update_or_add_pokemon" => ($_GET["action"] == "update" || $_GET["action"] == "add"),
                 "is_show_info" => isset($_GET["action"]) ? ($_GET["action"] == "info") : false,
                 "is_logged" => isset($_SESSION["usuario"])
             );

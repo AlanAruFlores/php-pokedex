@@ -7,7 +7,7 @@
         private $descripcion;
         private $tipo;
 
-        public function __construct($id="",$identificador="", $nombre="", $imagen="", $descripcion="",$tipo=""){
+        public function __construct($id=null,$identificador=null, $nombre=null, $imagen=null, $descripcion=null,$tipo=null){
             $this->id = $id;
             $this->identificador = $identificador;
             $this->nombre  = $nombre;

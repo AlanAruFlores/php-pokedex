@@ -9,7 +9,7 @@
 
         public function getByUserAndPassword($usuario){
             $userAttributes = self::getUserAttributes($usuario);
-            return $this->database->executeQuery("SELECT * FROM usuario WHERE usuario= '".$userAttributes["usuario"]."' and contrasena = '".$userAttributes["contrasena"]."';");
+            return $this->database->query("SELECT * FROM usuario WHERE usuario= '".$userAttributes["usuario"]."' and contrasena = '".$userAttributes["contrasena"]."';");
         }
         
         /*
