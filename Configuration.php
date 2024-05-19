@@ -4,6 +4,7 @@
     include_once("controller/HomeController.php");
     include_once("controller/AdminController.php");
     include_once("model/PokemonModel.php");
+    include_once("model/TipoModel.php");
     include_once("model/Pokemon.php");
     include_once("Router.php");
 
@@ -34,11 +35,15 @@
         }
 
         public static function getAdminController(){
-            return new AdminController(self::getPokemonModel(), self::getPresenter(), self::getMainSettings());
+            return new AdminController(self::getPokemonModel(),self::getTipoModel(),self::getPresenter(), self::getMainSettings());
         }
 
         public static function getPokemonModel(){
             return new PokemonModel(self::getDatabase());
+        }
+
+        public static function getTipoModel(){
+            return new TipoModel();
         }
 
         public static function getRouter(){
@@ -46,7 +51,6 @@
         }
         
         public static function getPresenter(){
-            // return new Presenter();
             return new MustachePresenter("view/templates");
         }
 

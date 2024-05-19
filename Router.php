@@ -20,7 +20,7 @@
                     break;
                 case "update_pokemon":
                     $adminController = Configuration::getAdminController();
-                    $adminController->goToModifyPokemon(1);
+                    $adminController->goToModifyPokemon(4);
                     break;
                 case "show_info":
                     $homeController = Configuration::getHomeController();

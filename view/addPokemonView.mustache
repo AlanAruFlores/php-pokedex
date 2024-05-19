@@ -9,9 +9,9 @@
     <input type="file" name="imagen" id="imagen" accept="image/*" required>
     <label>Tipo</label>
     <select name="tipo" required>
-        {{! <?php foreach($tipos as $tipo): ?>
-            <option value="<?=$tipo->getImagen()?>"><?=$tipo->getNombre()?></option>
-        <?php endforeach; ?> }}
+        {{#tipos}}
+            <option value="{{getImagen}}">{{getNombre}}</option>
+        {{/tipos}}
     </select>
     <label>Descripcion</label>
     <textarea name="descripcion" id="descripcion" required></textarea>
