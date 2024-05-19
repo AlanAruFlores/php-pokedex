@@ -1,4 +1,5 @@
 <?php 
+    // echo "UPS";
     include_once("model/Pokemon.php");
     class AdminController{
         private  $pokemonModel;
@@ -18,7 +19,8 @@
             $this->presenter->render("view/adminPanelView.mustache",["listPokemons"=>$listPokemons,
                     "isListEmpty"=> count($listPokemons) == 0, ...$this->main_settings]);
         }
-        public function showPokeInformation($id){
+        public function info(){
+            $id = $_GET["id"];
             $dtoPokemon = new Pokemon();
             $dtoPokemon->setId($id);
             $pokemon = $this->pokemonModel->getById($dtoPokemon);

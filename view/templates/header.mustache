@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./public/css/estilos.css">
+    <link rel="stylesheet" href="/php-pokedex/public/css/estilos.css">
     
     {{#is_update_or_add_pokemon}}
-        <link rel="stylesheet" href="./public/css/formulario.css">
+        <link rel="stylesheet" href="/php-pokedex/public/css/formulario.css">
     {{/is_update_or_add_pokemon}}
 
     {{#is_show_info}}
-        <link rel="stylesheet" href="./public/css/info.css">
+        <link rel="stylesheet" href="/php-pokedex/public/css/info.css">
     {{/is_show_info}}
     <title>Pokedex</title>
 </head>
@@ -20,7 +20,7 @@
     <header class="header">
         <div class="header__div">
             <h1 class="header__titulo">Poke<span class="header__sufijo">Info</span></h1>
-            <img src="./public/imagenes/pikachu.svg" class="header__logo">
+            <img src="/php-pokedex/public/imagenes/pikachu.svg" class="header__logo">
         </div>
 
         {{#is_loged}}

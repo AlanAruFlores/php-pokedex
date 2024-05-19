@@ -19,12 +19,12 @@ class HomeController{
         $this->presenter->render("view/homeView.mustache",["listPokemons"=>$listPokemons,...$this->main_settings]);
     }
 
-    public function showPokeInformation($id){
+    public function info(){
+        $id = $_GET["id"];
         $dtoPokemon = new Pokemon();
         $dtoPokemon->setId($id);
         $pokemon = $this->pokemonModel->getById($dtoPokemon);
         $this->presenter->render("view/showPokemonInfoView.mustache", ["pokemon"=>$pokemon,...$this->main_settings]);
-
     }
 
 }?>

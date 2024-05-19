@@ -47,17 +47,18 @@
         }
 
         public static function getRouter(){
-            return new Router();
+            return new Router("getHomeController","get");
         }
         
         public static function getPresenter(){
+            // Le pasamos el controlador y metodo por defectos
             return new MustachePresenter("view/templates");
         }
 
         public static function getMainSettings(){
             $main_settings = array(
                 "is_update_or_add_pokemon" => ($_GET["controller"] == "update_pokemon" || $_GET["controller"] == "add_pokemon"),
-                "is_show_info" => ($_GET["controller"] == "show_info"),
+                "is_show_info" => isset($_GET["action"]) ? ($_GET["action"] == "info") : false,
                 "is_logged" => isset($_SESSION["usuario"])
             );
             return $main_settings;
