@@ -7,7 +7,7 @@
     include_once("model/PokemonModel.php");
     include_once("model/TipoModel.php");
     include_once("model/Pokemon.php");
-
+    include_once("model/UsuarioModel.php");
     include_once("vendor/mustache/src/Mustache/Autoloader.php");
 
     //Clase tipo Factory que retornara las instancias del proyecto y donde vamos a tener los controllers a usar
@@ -31,7 +31,7 @@
 
         //Pokemon Controller y Modelo
         public static function getHomeController(){
-            return new HomeController(self::getPokemonModel(),self::getPresenter(), self::getMainSettings());
+            return new HomeController(self::getPokemonModel(),self::getUsuarioModel(),self::getPresenter(), self::getMainSettings());
         }
 
         public static function getAdminController(){
@@ -44,6 +44,9 @@
 
         public static function getTipoModel(){
             return new TipoModel();
+        }
+        public static function getUsuarioModel(){
+            return new UsuarioModel(self::getDatabase());
         }
 
         public static function getRouter(){
@@ -59,7 +62,7 @@
             $main_settings = array(
                 "is_update_or_add_pokemon" => ($_GET["action"] == "update" || $_GET["action"] == "add"),
                 "is_show_info" => isset($_GET["action"]) ? ($_GET["action"] == "info") : false,
-                "is_logged" => isset($_SESSION["usuario"])
+                "is_logged" => isset($_SESSION["usuario"]) ? true : false
             );
             return $main_settings;
         }

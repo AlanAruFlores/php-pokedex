@@ -1,3 +1,17 @@
+    <!--Pop up login   agregar un ID y un listener.-->
+    <div class="popup" style="display:{{display}}">
+        <form action="/php-pokedex/home/login" id="loginForm" class="popup__formulario" method="post">
+            <a href="#" class="popup__cerrar"><i class="fa-solid fa-xmark"></i></a>
+            <h2 class="popup__titulo">Login</h2>
+            <input type="text" id="usuario" placeholder="Usuario" name="usuario" required>
+            <input type="password" id="contrasena" placeholder="Contraseña" name="contrasena" required>
+            <input type="submit" value="Entrar">
+            {{#mensajeError}}
+                <p id="mensajeError" style="color: #ffffff">{{mensajeError}}</p>
+            {{/mensajeError}}
+        </form>
+    </div>
+
     <!--Pie de Pagina-->
     <footer class="footer">
         <div class="footer__informacion1">
@@ -27,8 +41,13 @@
                 popup.style.display = 'flex';
 
             });
+            const cerrarPopup = document.querySelector('.popup__cerrar');
+                cerrarPopup.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const contenidoSecreto = document.querySelector('.popup');
+                    contenidoSecreto.style.display = 'none';
+            });
         });
     </script>
-     <script src="assets/scripts/popupjs.js"></script>
 </body>
 </html>

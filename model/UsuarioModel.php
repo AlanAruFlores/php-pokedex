@@ -19,7 +19,7 @@
             return array(
                 "id" => $user->getId(),
                 "usuario" => $user->getUsuario(),
-                "apellido" => $user->getApellido()
+                "contrasena" => $user->getContrasenia()
             );
         }
 

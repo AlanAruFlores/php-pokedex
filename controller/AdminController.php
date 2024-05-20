@@ -94,6 +94,13 @@
             $this->presenter->render("view/adminPanelView.mustache",["listPokemons"=>$listPokemons,
                 "isListEmpty"=> count($listPokemons) == 0, ...$this->main_settings]);
         }
+
+
+        public function logout(){
+            unset($_SESSION["usuario"]);
+            $_SESSION["usuario"] = null;
+            header("Location:/php-pokedex/home/get");
+        }
     }
 
 
