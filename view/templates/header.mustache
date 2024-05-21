@@ -23,12 +23,12 @@
             <img src="/php-pokedex/public/imagenes/pikachu.svg" class="header__logo">
         </div>
 
-        {{#is_loged}}
-                    <a href="/php/cerrar_sesion.php" class="header__link">Cerrar Sesion</a>
-        {{/is_loged}}
+        {{#is_logged}}
+            <a href="/php-pokedex/admin/logout" class="header__link">Cerrar Sesion</a>
+        {{/is_logged}}
 
-        {{^is_loged}}
+        {{^is_logged}}
             <a href="#" id="loginButton" class="header__link">Login</a>
-        {{/is_loged}}
+        {{/is_logged}}
 
 </header>
