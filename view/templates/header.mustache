@@ -18,16 +18,21 @@
 </head>
 <body>
     <header class="header">
-        <div class="header__div">
-            <h1 class="header__titulo">Poke<span class="header__sufijo">Info</span></h1>
-            <img src="/php-pokedex/public/imagenes/pikachu.svg" class="header__logo">
-        </div>
 
         {{#is_logged}}
+            <a href="/php-pokedex/admin/get" class="header__div">
+                <h1 class="header__titulo">Poke<span class="header__sufijo">Info</span></h1>
+                <img src="/php-pokedex/public/imagenes/pikachu.svg" class="header__logo">
+                </a>
             <a href="/php-pokedex/admin/logout" class="header__link">Cerrar Sesion</a>
         {{/is_logged}}
 
         {{^is_logged}}
+        <a href="/php-pokedex/home/get" class="header__div">
+            <h1 class="header__titulo">Poke<span class="header__sufijo">Info</span></h1>
+            <img src="/php-pokedex/public/imagenes/pikachu.svg" class="header__logo">
+        </a>
+
             <a href="#" id="loginButton" class="header__link">Login</a>
         {{/is_logged}}
 
