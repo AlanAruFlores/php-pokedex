@@ -11,15 +11,13 @@
             $userAttributes = self::getUserAttributes($usuario);
             return $this->database->query("SELECT * FROM usuario WHERE usuario= '".$userAttributes["usuario"]."' and contrasena = '".$userAttributes["contrasena"]."';");
         }
-        
-        /*
-            Obtenemos los atributos del Usuario
-        */
+
+        /*Obtenemos los atributos del Usuario*/
         public static function getUserAttributes($user){
             return array(
                 "id" => $user->getId(),
                 "usuario" => $user->getUsuario(),
-                "apellido" => $user->getApellido()
+                "contrasena" => $user->getContrasena()
             );
         }
 

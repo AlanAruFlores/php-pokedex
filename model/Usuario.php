@@ -2,12 +2,12 @@
     class Usuario{
         private $id;
         private $usuario;
-        private $contrasenia;
+        private $contrasena;
 
         public function __construct($id="", $usuario="", $contrasenia=""){
             $this->id = $id;
             $this->usuario = $usuario;
-            $this->contrasenia = $contrasenia;
+            $this->contrasena = $contrasenia;
         }
 
         // Getter para la propiedad 'id'
@@ -31,13 +31,13 @@
         }
 
         // Getter para la propiedad 'contrasenia'
-        public function getContrasenia() {
-            return $this->contrasenia;
+        public function getContrasena() {
+            return $this->contrasena;
         }
 
         // Setter para la propiedad 'contrasenia'
-        public function setContrasenia($contrasenia) {
-            $this->contrasenia = $contrasenia;
+        public function setContrasena($contrasena) {
+            $this->contrasena = $contrasena;
         }
     }
 ?>

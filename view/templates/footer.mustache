@@ -1,34 +1,56 @@
-    <!--Pie de Pagina-->
-    <footer class="footer">
-        <div class="footer__informacion1">
-            <h2 class="footer__titulo">Poke<span>Info</span></h2>
-            <h3 class="footer__subtitulo">Integrantes</h3>
-            <ul class="footer__integrantes">
-                <li>Alan Aruquipa</li>
-                <li>Franco Vargas</li>
-                <li>Lucas Gavagnin</li>
-            </ul>
-        </div>
-        <div class="footer__informacion2">
-            <h3 class="footer__subtitulo">Materia</h3>
-            <p>Programacion Web II</p>
-            <h3 class="footer__subtitulo">Universidad</h3>
-            <p>	&#169; Universidad Nacional de la Matanza</p>
-        </div>
-    </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const loginButton = document.getElementById('loginButton');
+<!--Pie de Pagina-->
+<footer class="footer">
+    <div class="footer__informacion1">
+        <h2 class="footer__titulo">Poke<span>Info</span></h2>
+        <h3 class="footer__subtitulo">Integrantes</h3>
+        <ul class="footer__integrantes">
+            <li>Alan Aruquipa</li>
+            <li>Franco Vargas</li>
+            <li>Lucas Gavagnin</li>
+        </ul>
+    </div>
+    <div class="footer__informacion2">
+        <h3 class="footer__subtitulo">Materia</h3>
+        <p>Programacion Web II</p>
+        <h3 class="footer__subtitulo">Universidad</h3>
+        <p> &#169; Universidad Nacional de la Matanza</p>
+    </div>
+</footer>
 
-            loginButton.addEventListener('click', function(event) {
-                event.preventDefault();
+<div class="popup" style="display:{{display}}">
+    <form action="/php-pokedex/home/login" id="loginForm" class="popupformulario" method="post">
+        <a href="#" class="popupcerrar"><i class="fa-solid fa-xmark"></i></a>
+        <h2 class="popup__titulo">Login</h2>
+        <input type="text" id="usuario" placeholder="Usuario" name="usuario" required>
+        <input type="password" id="contrasena" placeholder="Contraseña" name="contrasena" required>
+        <input type="submit" value="Entrar">
+        {{#mensajeError}}
+            <p id="mensajeError" style="color: #ffffff">{{mensajeError}}</p>
+        {{/mensajeError}}
+    </form>
+</div>
 
-                const popup = document.querySelector('.popup');
-                popup.style.display = 'flex';
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const loginButton = document.getElementById('loginButton');
 
-            });
+        loginButton.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            const popup = document.querySelector('.popup');
+            popup.style.display = 'flex';
+
+
         });
-    </script>
-     <script src="assets/scripts/popupjs.js"></script>
+        const cerrarPopup = document.querySelector('.popup__cerrar');
+        cerrarPopup.addEventListener('click', function (event) {
+            event.preventDefault();
+            const contenidoSecreto = document.querySelector('.popup');
+            contenidoSecreto.style.display = 'none';
+        });
+    });
+
+</script>
+
 </body>
 </html>
